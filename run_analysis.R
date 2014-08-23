@@ -33,8 +33,14 @@ readData <- function(partition, maxn) {
 #read data
 #specifying colClasses and an appropriate nrows greatly speeds things up
 #handy to name feature variables at the same time
-    features <- read.table(features.file, header=FALSE, col.names=feature.names, colClasses="numeric", nrows=maxn)
+#NB we retain the special characters in the feature names (especially minus signs) to retain consistency with the
+#original data set. We do not use any formulas etc. that could have a problem with this, but
+#this could change in the future (and check.names set to TRUE). This would not break this script, but results
+#in "less appealing" variable names (without faffing about).
+    features <- read.table(features.file, header=FALSE, col.names=feature.names, check.names=FALSE, 
+                    colClasses="numeric", nrows=maxn)
 
+    print(names(features))
     dims            <- dim(features)
     nrow.features   <- dims[1]
     ncol.features   <- dims[2]
