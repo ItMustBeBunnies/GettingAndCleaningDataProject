@@ -9,7 +9,7 @@ These are the variable names (of the feature vector) given in the file `features
 
 The processing that has been applied is to:
 
-1. extract all variables that relates to a mean or standard deviation
+1. extract all variables that relate to a mean or standard deviation
 of a quantity (feature variable names that contain "mean" or "std"),
 2. group each of these over the subject and activity labels,
 3. and calculate the mean of each group.
