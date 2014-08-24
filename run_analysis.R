@@ -40,7 +40,6 @@ readData <- function(partition, maxn) {
     features <- read.table(features.file, header=FALSE, col.names=feature.names, check.names=FALSE, 
                     colClasses="numeric", nrows=maxn)
 
-    print(names(features))
     dims            <- dim(features)
     nrow.features   <- dims[1]
     ncol.features   <- dims[2]
